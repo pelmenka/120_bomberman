@@ -118,8 +118,9 @@ void hero::update(int a)
 bool bomb::spawn(int x, int y)
 {
     puts("BOMB_S");
-    if(glfwGetTime() < timer) return 0;
+    if(timer > 0) return 0;
     if(field.getBlock(x, y) != 0) return 0;
+    if(glfwGetTime() < expTime+0.2) return 0;
     timer = glfwGetTime()+2;
     pos = {x, y};
     power = 3;
@@ -133,11 +134,10 @@ bomb::bomb()
     timer = -1;
     fire = new emitter[4];
     for(int i = 0; i < 4; i++)
+    {
         fire[i].nospawn = 1;
-    fire[0].speed = {2, 0, 0};
-    fire[1].speed = {0, 2, 0};
-    fire[2].speed = {-2, 0, 0};
-    fire[3].speed = {0, -2, 0};
+        fire[i].speed = {0, 0, 0};
+    }
     expTime = 0;
 }
 
@@ -149,25 +149,32 @@ bomb::~bomb()
 void bomb::update()
 {
     for(int i = 0; i < 4; i++) fire[i].update();
-    //fire[0].update();
     if(timer < 0) return;
     if(glfwGetTime() < timer) return;
-    if(glfwGetTime() < expTime+0.5) return;
     puts("BOMB_U");
     explode();
 }
 
 void bomb::explode()
 {
-    puts("BOMB_E");
+    if(timer < 0) return;
+    printf("BOMB_E %d %d\n", (int)pos.x, (int)pos.y);
+
     timer = -1;
     expTime = glfwGetTime();
+    vec4i sides = field.explosion(pos.x, pos.y, power);
+    printf("%d", sides.x);
+    fire[0].speed.x = sides.y;
+    fire[1].speed.y = sides.x;
+    fire[2].speed.x = -sides.w;
+    fire[3].speed.y = -sides.z;
+
     for(int i = 0; i < 4; i++)
     {
         fire[i].pos = {pos.x, pos.y, 0.25};
         fire[i].spawn();
     }
-    field.explosion(pos.x, pos.y, power);
+
 }
 
 

@@ -43,7 +43,6 @@
 			<Add library="opengl32" />
 			<Add library="gdi32" />
 			<Add library="freeimage" />
-			<Add library="box2d" />
 			<Add directory="../lib" />
 		</Linker>
 		<Unit filename="common.h" />
@@ -55,11 +54,10 @@
 		<Unit filename="log.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
-		<Unit filename="particles.cpp" />
-		<Unit filename="particles.h" />
 		<Unit filename="render/buffer.cpp" />
 		<Unit filename="render/buffer.h" />
 		<Unit filename="render/game.cpp" />
+		<Unit filename="render/internal.h" />
 		<Unit filename="render/model.cpp" />
 		<Unit filename="render/model.h" />
 		<Unit filename="render/particles.cpp" />
@@ -67,6 +65,7 @@
 		<Unit filename="render/primitives.cpp" />
 		<Unit filename="render/render.cpp" />
 		<Unit filename="render/render.h" />
+		<Unit filename="render/resources.cpp" />
 		<Unit filename="render/shader.cpp" />
 		<Unit filename="render/shader.h" />
 		<Unit filename="resource.rc">

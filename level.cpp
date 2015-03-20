@@ -32,9 +32,13 @@ char level::getBlock(int x, int y)
     return data[x][y].val;
 }
 
-void level::explosion(int x, int y, int p)
+vec4i level::explosion(int x, int y, int p)
 {
     int off[4][2] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+
+    int b[4] = {0, 0, 0, 0};
+
+
     render::game::putBlock(x, y, 3);
     data[x][y].ref = 0;
     vec2i r;
@@ -60,8 +64,12 @@ void level::explosion(int x, int y, int p)
                 data[r.x][r.y].val = 0;
                 break;
             }
+            b[i]++;
         }
     }
+    vec4i sides;
+    memcpy(&sides, b, sizeof(vec4i));
+    return sides;
 }
 
 void level::putBomb(int x, int y, bomb *r)

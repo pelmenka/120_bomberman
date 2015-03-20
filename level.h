@@ -27,7 +27,7 @@ public:
 
     char getBlock(int, int);
     void putBomb(int, int, bomb*);
-    void explosion(int, int, int);
+    vec4i explosion(int, int, int);
 
     void generate();
     void placeBox();
