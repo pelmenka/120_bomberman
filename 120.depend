@@ -1,0 +1,963 @@
+# depslib dependency file v1.0
+1426803121 source:d:\программирование\120\src\main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<Box2D.h>
+	<stdio.h>
+	<stdlib.h>
+	"texops.h"
+	"shader.h"
+	"model.h"
+	"render.h"
+	"level.h"
+	"hero.h"
+	"particles.h"
+
+1344236348 d:\программирование\120\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1421597858 d:\программирование\120\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1425805286 source:d:\программирование\120\src\texops.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<FreeImage.h>
+	<stdio.h>
+	<list>
+	"texops.h"
+
+1348416994 d:\программирование\120\include\freeimage.h
+	<wchar.h>
+	<inttypes.h>
+
+1425805124 d:\программирование\120\src\texops.h
+	"common.h"
+
+1426658146 d:\программирование\120\src\common.h
+	"log.h"
+
+1413938196 d:\программирование\120\include\angelscript.h
+	<stddef.h>
+	<stdint.h>
+	<type_traits>
+
+1425806302 source:d:\программирование\120\src\shader.cpp
+	<GL/glew.h>
+	<stdio.h>
+	<assert.h>
+	<memory.h>
+	"shader.h"
+	"log.h"
+
+1425806302 d:\программирование\120\src\shader.h
+
+1425804102 d:\программирование\120\src\log.h
+
+1425804118 source:d:\программирование\120\src\log.cpp
+	<fstream>
+	"log.h"
+
+1426859443 source:c:\prog\120\src\log.cpp
+	<fstream>
+	"log.h"
+
+1426859443 c:\prog\120\src\log.h
+
+1425809902 source:c:\prog\120\src\shader.cpp
+	<GL/glew.h>
+	<stdio.h>
+	<assert.h>
+	<memory.h>
+	"shader.h"
+	"log.h"
+
+1344236348 c:\prog\120\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1425809902 c:\prog\120\src\shader.h
+
+1425808886 source:c:\prog\120\src\texops.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<FreeImage.h>
+	<stdio.h>
+	<list>
+	"texops.h"
+
+1421601458 c:\prog\120\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1348416994 c:\prog\120\include\freeimage.h
+	<wchar.h>
+	<inttypes.h>
+
+1425808724 c:\prog\120\src\texops.h
+	"common.h"
+
+1426661746 c:\prog\120\src\common.h
+	"log.h"
+
+1426189746 source:c:\prog\120\src\model.cpp
+	<stdio.h>
+	<stdlib.h>
+	<GL/glew.h>
+	<string.h>
+	"model.h"
+	"texops.h"
+
+1426164296 c:\prog\120\src\model.h
+	<string>
+	"common.h"
+
+1426863528 source:c:\prog\120\src\main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<Box2D.h>
+	<stdio.h>
+	<stdlib.h>
+	"texops.h"
+	"shader.h"
+	"model.h"
+	"render/render.h"
+	"level.h"
+	"hero.h"
+	"particles.h"
+
+1426863520 source:c:\prog\120\src\level.cpp
+	<GL/glew.h>
+	"level.h"
+	<memory.h>
+	<stdlib.h>
+	"render/render.h"
+
+1426672116 c:\prog\120\src\level.h
+	"common.h"
+	"hero.h"
+
+1426841608 c:\prog\120\src\render.h
+	"common.h"
+	"shader.h"
+	"model.h"
+	"level.h"
+
+1426859869 source:c:\prog\120\src\render.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"texops.h"
+	"render.h"
+	"shader.h"
+	"hero.h"
+	<stdio.h>
+	<string.h>
+
+1426806558 source:c:\prog\120\src\hero.cpp
+	<GLFW/glfw3.h>
+	<math.h>
+	"hero.h"
+	"level.h"
+	"main.h"
+	<stdio.h>
+
+1426767652 c:\prog\120\src\hero.h
+	"common.h"
+	"model.h"
+	"particles.h"
+	<vector>
+
+1426015672 c:\prog\120\src\main.h
+
+1426802957 source:d:\программирование\120\src\hero.cpp
+	<GLFW/glfw3.h>
+	<math.h>
+	"hero.h"
+	"level.h"
+	"main.h"
+	<stdio.h>
+
+1426764052 d:\программирование\120\src\hero.h
+	"common.h"
+	"model.h"
+	"particles.h"
+	<vector>
+
+1426160696 d:\программирование\120\src\model.h
+	<string>
+	"common.h"
+
+1426012072 d:\программирование\120\src\main.h
+
+1426844028 source:d:\программирование\120\src\level.cpp
+	<GL/glew.h>
+	"level.h"
+	<memory.h>
+	<stdlib.h>
+	"render.h"
+
+1426668516 d:\программирование\120\src\level.h
+	"common.h"
+	"hero.h"
+
+1426838006 d:\программирование\120\src\render.h
+	"common.h"
+	"shader.h"
+	"model.h"
+	"level.h"
+
+1426186146 source:d:\программирование\120\src\model.cpp
+	<stdio.h>
+	<stdlib.h>
+	<GL/glew.h>
+	<string.h>
+	"model.h"
+	"texops.h"
+
+1426802903 source:d:\программирование\120\src\render.cpp
+	<GL/glew.h>
+	"texops.h"
+	"render.h"
+	"shader.h"
+	"hero.h"
+	<stdio.h>
+	<string.h>
+
+1332136812 d:\программирование\120\include\box2d.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382856100 d:\программирование\120\include\box2d\common\b2settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322352524 d:\программирование\120\include\box2d\common\b2draw.h
+	<Box2D/Common/b2Math.h>
+
+1382856062 d:\программирование\120\include\box2d\common\b2math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425744 d:\программирование\120\include\box2d\common\b2timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300987020 d:\программирование\120\include\box2d\collision\shapes\b2circleshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981394 d:\программирование\120\include\box2d\collision\shapes\b2shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300987020 d:\программирование\120\include\box2d\common\b2blockallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382854528 d:\программирование\120\include\box2d\collision\b2collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859988 d:\программирование\120\include\box2d\collision\shapes\b2edgeshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382857620 d:\программирование\120\include\box2d\collision\shapes\b2chainshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324249492 d:\программирование\120\include\box2d\collision\shapes\b2polygonshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332054492 d:\программирование\120\include\box2d\collision\b2broadphase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332054498 d:\программирование\120\include\box2d\collision\b2dynamictree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383025932 d:\программирование\120\include\box2d\common\b2growablestack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300987020 d:\программирование\120\include\box2d\collision\b2distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425736 d:\программирование\120\include\box2d\collision\b2timeofimpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382854092 d:\программирование\120\include\box2d\dynamics\b2body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072342 d:\программирование\120\include\box2d\dynamics\b2fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073602 d:\программирование\120\include\box2d\dynamics\b2worldcallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809132 d:\программирование\120\include\box2d\dynamics\b2timestep.h
+	<Box2D/Common/b2Math.h>
+
+1383020096 d:\программирование\120\include\box2d\dynamics\b2world.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300987020 d:\программирование\120\include\box2d\common\b2stackallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300987020 d:\программирование\120\include\box2d\dynamics\b2contactmanager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383025932 d:\программирование\120\include\box2d\dynamics\contacts\b2contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162984 d:\программирование\120\include\box2d\dynamics\joints\b2distancejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332136764 d:\программирование\120\include\box2d\dynamics\joints\b2joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174278 d:\программирование\120\include\box2d\dynamics\joints\b2frictionjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174534 d:\программирование\120\include\box2d\dynamics\joints\b2gearjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487184 d:\программирование\120\include\box2d\dynamics\joints\b2motorjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332051884 d:\программирование\120\include\box2d\dynamics\joints\b2mousejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365928 d:\программирование\120\include\box2d\dynamics\joints\b2prismaticjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546446 d:\программирование\120\include\box2d\dynamics\joints\b2pulleyjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172374 d:\программирование\120\include\box2d\dynamics\joints\b2revolutejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194214 d:\программирование\120\include\box2d\dynamics\joints\b2ropejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170664 d:\программирование\120\include\box2d\dynamics\joints\b2weldjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546502 d:\программирование\120\include\box2d\dynamics\joints\b2wheeljoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332140412 c:\prog\120\include\box2d.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382859700 c:\prog\120\include\box2d\common\b2settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322356124 c:\prog\120\include\box2d\common\b2draw.h
+	<Box2D/Common/b2Math.h>
+
+1382859662 c:\prog\120\include\box2d\common\b2math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425744 c:\prog\120\include\box2d\common\b2timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300990620 c:\prog\120\include\box2d\collision\shapes\b2circleshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981394 c:\prog\120\include\box2d\collision\shapes\b2shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300990620 c:\prog\120\include\box2d\common\b2blockallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382858128 c:\prog\120\include\box2d\collision\b2collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859988 c:\prog\120\include\box2d\collision\shapes\b2edgeshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382861220 c:\prog\120\include\box2d\collision\shapes\b2chainshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324253092 c:\prog\120\include\box2d\collision\shapes\b2polygonshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332058092 c:\prog\120\include\box2d\collision\b2broadphase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332058098 c:\prog\120\include\box2d\collision\b2dynamictree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383029532 c:\prog\120\include\box2d\common\b2growablestack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300990620 c:\prog\120\include\box2d\collision\b2distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425736 c:\prog\120\include\box2d\collision\b2timeofimpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382857692 c:\prog\120\include\box2d\dynamics\b2body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072342 c:\prog\120\include\box2d\dynamics\b2fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073602 c:\prog\120\include\box2d\dynamics\b2worldcallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809132 c:\prog\120\include\box2d\dynamics\b2timestep.h
+	<Box2D/Common/b2Math.h>
+
+1383023696 c:\prog\120\include\box2d\dynamics\b2world.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300990620 c:\prog\120\include\box2d\common\b2stackallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300990620 c:\prog\120\include\box2d\dynamics\b2contactmanager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383029532 c:\prog\120\include\box2d\dynamics\contacts\b2contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162984 c:\prog\120\include\box2d\dynamics\joints\b2distancejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332140364 c:\prog\120\include\box2d\dynamics\joints\b2joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174278 c:\prog\120\include\box2d\dynamics\joints\b2frictionjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174534 c:\prog\120\include\box2d\dynamics\joints\b2gearjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487184 c:\prog\120\include\box2d\dynamics\joints\b2motorjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332055484 c:\prog\120\include\box2d\dynamics\joints\b2mousejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365928 c:\prog\120\include\box2d\dynamics\joints\b2prismaticjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546446 c:\prog\120\include\box2d\dynamics\joints\b2pulleyjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172374 c:\prog\120\include\box2d\dynamics\joints\b2revolutejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194214 c:\prog\120\include\box2d\dynamics\joints\b2ropejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170664 c:\prog\120\include\box2d\dynamics\joints\b2weldjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546502 c:\prog\120\include\box2d\dynamics\joints\b2wheeljoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1409249072 source:d:\программирование\120\src\practicles.cpp
+	"practicles.h"
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<math.h>
+	<random>
+	<assert.h>
+
+1409247720 d:\программирование\120\src\practicles.h
+	"common.h"
+
+1426802810 d:\программирование\120\src\particles.h
+	"common.h"
+
+1426859934 c:\prog\120\src\particles.h
+	"common.h"
+
+1426617748 source:c:\prog\120\src\resource.rc
+
+1426806412 source:c:\prog\120\src\particles.cpp
+	"particles.h"
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<math.h>
+	<random>
+	<assert.h>
+	"render.h"
+
+1426614148 source:d:\программирование\120\src\resource.rc
+
+1426802810 source:d:\программирование\120\src\particles.cpp
+	"particles.h"
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<math.h>
+	<random>
+	<assert.h>
+	"render.h"
+
+1426863543 c:\prog\120\src\render\render.h
+	"../common.h"
+
+1426880417 source:d:\программирование\120_1\src\level.cpp
+	<GL/glew.h>
+	"level.h"
+	<memory.h>
+	<stdlib.h>
+	"render/render.h"
+
+1344236348 d:\программирование\120_1\include\gl\glew.h
+	<stddef.h>
+	<inttypes.h>
+	<stdint.h>
+	<inttypes.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+
+1426880411 d:\программирование\120_1\src\level.h
+	"common.h"
+	"hero.h"
+
+1426658146 d:\программирование\120_1\src\common.h
+	"log.h"
+
+1426855844 d:\программирование\120_1\src\log.h
+
+1426865011 d:\программирование\120_1\src\hero.h
+	"common.h"
+	"render/particles.h"
+	<vector>
+
+1426883264 d:\программирование\120_1\src\render\render.h
+	"../common.h"
+
+1426855844 source:d:\программирование\120_1\src\log.cpp
+	<fstream>
+	"log.h"
+
+1426883374 source:d:\программирование\120_1\src\main.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<stdio.h>
+	<stdlib.h>
+	"render/render.h"
+	"level.h"
+	"hero.h"
+
+1421597858 d:\программирование\120_1\include\glfw\glfw3.h
+	<stddef.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<GL/glcorearb.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES3/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES3/gl2ext.h>
+	<GL/gl.h>
+	<GL/glext.h>
+	<GL/glu.h>
+
+1332136812 d:\программирование\120_1\include\box2d.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382856100 d:\программирование\120_1\include\box2d\common\b2settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322352524 d:\программирование\120_1\include\box2d\common\b2draw.h
+	<Box2D/Common/b2Math.h>
+
+1382856062 d:\программирование\120_1\include\box2d\common\b2math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425744 d:\программирование\120_1\include\box2d\common\b2timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300987020 d:\программирование\120_1\include\box2d\collision\shapes\b2circleshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981394 d:\программирование\120_1\include\box2d\collision\shapes\b2shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300987020 d:\программирование\120_1\include\box2d\common\b2blockallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382854528 d:\программирование\120_1\include\box2d\collision\b2collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859988 d:\программирование\120_1\include\box2d\collision\shapes\b2edgeshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382857620 d:\программирование\120_1\include\box2d\collision\shapes\b2chainshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324249492 d:\программирование\120_1\include\box2d\collision\shapes\b2polygonshape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332054492 d:\программирование\120_1\include\box2d\collision\b2broadphase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332054498 d:\программирование\120_1\include\box2d\collision\b2dynamictree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383025932 d:\программирование\120_1\include\box2d\common\b2growablestack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300987020 d:\программирование\120_1\include\box2d\collision\b2distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425736 d:\программирование\120_1\include\box2d\collision\b2timeofimpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382854092 d:\программирование\120_1\include\box2d\dynamics\b2body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072342 d:\программирование\120_1\include\box2d\dynamics\b2fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073602 d:\программирование\120_1\include\box2d\dynamics\b2worldcallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809132 d:\программирование\120_1\include\box2d\dynamics\b2timestep.h
+	<Box2D/Common/b2Math.h>
+
+1383020096 d:\программирование\120_1\include\box2d\dynamics\b2world.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300987020 d:\программирование\120_1\include\box2d\common\b2stackallocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300987020 d:\программирование\120_1\include\box2d\dynamics\b2contactmanager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383025932 d:\программирование\120_1\include\box2d\dynamics\contacts\b2contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162984 d:\программирование\120_1\include\box2d\dynamics\joints\b2distancejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332136764 d:\программирование\120_1\include\box2d\dynamics\joints\b2joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174278 d:\программирование\120_1\include\box2d\dynamics\joints\b2frictionjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174534 d:\программирование\120_1\include\box2d\dynamics\joints\b2gearjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487184 d:\программирование\120_1\include\box2d\dynamics\joints\b2motorjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332051884 d:\программирование\120_1\include\box2d\dynamics\joints\b2mousejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365928 d:\программирование\120_1\include\box2d\dynamics\joints\b2prismaticjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546446 d:\программирование\120_1\include\box2d\dynamics\joints\b2pulleyjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172374 d:\программирование\120_1\include\box2d\dynamics\joints\b2revolutejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194214 d:\программирование\120_1\include\box2d\dynamics\joints\b2ropejoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170664 d:\программирование\120_1\include\box2d\dynamics\joints\b2weldjoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546502 d:\программирование\120_1\include\box2d\dynamics\joints\b2wheeljoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1425805124 d:\программирование\120_1\src\texops.h
+	"common.h"
+
+1426614148 source:d:\программирование\120_1\src\resource.rc
+
+1425805286 source:d:\программирование\120_1\src\texops.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<FreeImage.h>
+	<stdio.h>
+	<list>
+	"texops.h"
+
+1348416994 d:\программирование\120_1\include\freeimage.h
+	<wchar.h>
+	<inttypes.h>
+
+1426864999 d:\программирование\120_1\src\render\particles.h
+	"../common.h"
+
+1426871324 source:d:\программирование\120_1\src\hero.cpp
+	<GLFW/glfw3.h>
+	<math.h>
+	"hero.h"
+	"level.h"
+	"main.h"
+	<stdio.h>
+
+1426012072 d:\программирование\120_1\src\main.h
+
+1426880388 source:d:\программирование\120_1\src\render\buffer.cpp
+	<GL/glew.h>
+	<list>
+	"buffer.h"
+
+1426880388 d:\программирование\120_1\src\render\buffer.h
+	"../common.h"
+
+1426883264 source:d:\программирование\120_1\src\render\game.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<memory.h>
+	"internal.h"
+	"render.h"
+	"buffer.h"
+	"model.h"
+	"../level.h"
+
+1426866618 source:d:\программирование\120_1\src\render\model.cpp
+	<stdio.h>
+	<stdlib.h>
+	<GL/glew.h>
+	<string.h>
+	"model.h"
+	"../texops.h"
+
+1426866618 d:\программирование\120_1\src\render\model.h
+	<string>
+	"../common.h"
+
+1426883163 source:d:\программирование\120_1\src\render\particles.cpp
+	"particles.h"
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	<math.h>
+	<random>
+	<assert.h>
+	"render.h"
+
+1426883126 source:d:\программирование\120_1\src\render\primitives.cpp
+	<GL/glew.h>
+	"buffer.h"
+	"shader.h"
+	"render.h"
+	<stdio.h>
+
+1425806302 d:\программирование\120_1\src\render\shader.h
+
+1426874952 d:\программирование\120_1\src\render\internal.h
+	"shader.h"
+	"model.h"
+
+1426883349 source:d:\программирование\120_1\src\render\render.cpp
+	<GL/glew.h>
+	<GLFW/glfw3.h>
+	"render.h"
+	"shader.h"
+	"model.h"
+	"particles.h"
+	"internal.h"
+
+1426881308 source:d:\программирование\120_1\src\render\resources.cpp
+	<GL/glew.h>
+	"internal.h"
+	"shader.h"
+	"model.h"
+	"../texops.h"
+
+1426880112 source:d:\программирование\120_1\src\render\shader.cpp
+	<GL/glew.h>
+	<stdio.h>
+	<assert.h>
+	<memory.h>
+	"shader.h"
+	"../log.h"
+

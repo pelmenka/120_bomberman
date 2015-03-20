@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="120" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="../bin/120" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../bin/." />
+				<Option object_output="../obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="../bin/120" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="../bin/." />
+				<Option object_output="../obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++11" />
+			<Add option="-Wall" />
+			<Add directory="../include" />
+		</Compiler>
+		<Linker>
+			<Add library="glfw3dll" />
+			<Add library="glew32.dll" />
+			<Add library="glu32" />
+			<Add library="opengl32" />
+			<Add library="gdi32" />
+			<Add library="freeimage" />
+			<Add library="box2d" />
+			<Add directory="../lib" />
+		</Linker>
+		<Unit filename="common.h" />
+		<Unit filename="hero.cpp" />
+		<Unit filename="hero.h" />
+		<Unit filename="level.cpp" />
+		<Unit filename="level.h" />
+		<Unit filename="log.cpp" />
+		<Unit filename="log.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Unit filename="particles.cpp" />
+		<Unit filename="particles.h" />
+		<Unit filename="render/buffer.cpp" />
+		<Unit filename="render/buffer.h" />
+		<Unit filename="render/game.cpp" />
+		<Unit filename="render/model.cpp" />
+		<Unit filename="render/model.h" />
+		<Unit filename="render/particles.cpp" />
+		<Unit filename="render/particles.h" />
+		<Unit filename="render/primitives.cpp" />
+		<Unit filename="render/render.cpp" />
+		<Unit filename="render/render.h" />
+		<Unit filename="render/shader.cpp" />
+		<Unit filename="render/shader.h" />
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="texops.cpp" />
+		<Unit filename="texops.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
