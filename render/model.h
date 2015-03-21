@@ -2,13 +2,9 @@
 #define MODEL_H_INCLUDED
 
 #include <string>
+#include <vector>
 #include "../common.h"
-
-typedef struct
-{
-    int v[3];
-    int t[3];
-}triangle;
+#include "buffer.h"
 
 struct vertex
 {
@@ -20,15 +16,14 @@ typedef struct
 {
     std::string name;
     uint tex;
-    int count;
-    int offset;
 }material;
 
 class model
 {
-    uint VAO, VBO;
-    material *materials;
-    int matCount;
+    vertexBuffer VBO;
+    vertexArray VAO;
+    std::vector<material> materials;
+    std::vector<vec2i> offsets;
 
     bool mathmtl(std::string, std::string);
     int findmtl(std::string);
@@ -38,7 +33,6 @@ public:
 
     bool load(std::string);
     void draw();
-    void drawOld();
 };
 
 #endif // MODEL_H_INCLUDED
