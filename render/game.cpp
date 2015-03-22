@@ -5,7 +5,7 @@
 #include "render.h"
 #include "buffer.h"
 #include "model.h"
-#include "../level.h"
+#include "../enemy.h"
 
 char expMap[45][33];
 
@@ -178,26 +178,35 @@ void hero::draw()
     internal::defaultShader.bind();
     glPushMatrix();
     glTranslatef(pos.x+0.5, pos.y+0.5, 0);
-    glScalef(0.3, 0.3, 0.3);
 
-    glRotatef(90, 1, 0, 0);
-    glRotatef(angle+180, 0, 1, 0);
+    glRotatef(angle, 0, 0, 1);
     internal::heroModel.draw();
     glPopMatrix();
     for(int i = 0; i < mines.size(); i++)
         mines[i].draw();
 }
 
+void enemy::draw()
+{
+    if(!alive) return;
+    internal::defaultShader.bind();
+    glPushMatrix();
+    glTranslatef(pos.x+0.5, pos.y+0.5, 0);
+
+    glRotatef(angle, 0, 0, -1);
+    internal::enemyModel.draw();
+    glPopMatrix();
+}
+
 void bomb::draw()
 {
     if(timer > 0)
     {
-        float scale = 0.05+0.01*(2-timer+glfwGetTime());
+        float scale = 1+0.2*(2-timer+glfwGetTime());
         internal::defaultShader.bind();
         glPushMatrix();
         glTranslatef(pos.x+0.5, pos.y+0.5, 0);
         glScalef(scale, scale, scale);
-        glRotatef(90, 1, 0, 0);
         internal::bombModel.draw();
         glPopMatrix();
     }

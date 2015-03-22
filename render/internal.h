@@ -9,7 +9,7 @@
 namespace internal
 {
     extern shader defaultShader, terrainShader, wallShader, particleShader;
-    extern model crateModel, heroModel, bombModel;
+    extern model crateModel, heroModel, bombModel, enemyModel;
     extern unsigned int textures[TEX_COUNT];
     void loadResources();
 }

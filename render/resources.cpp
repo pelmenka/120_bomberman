@@ -8,7 +8,7 @@ using namespace internal;
 
 GLuint internal::textures[TEX_COUNT];
 shader internal::defaultShader, internal::terrainShader, internal::wallShader, internal::particleShader;
-model internal::crateModel, internal::heroModel, internal::bombModel;
+model internal::crateModel, internal::heroModel, internal::bombModel, internal::enemyModel;
 
 void loadTextures();
 void loadShaders();
@@ -26,10 +26,10 @@ void loadTextures()
     loadTexture("data/textures/mask.png", &textures[0], 3);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-    loadTexture("data/textures/grass.jpg", &textures[1], 3);
-    loadTexture("data/textures/rock.jpg", &textures[2], 3);
-    loadTexture("data/textures/lava.jpg", &textures[3], 3);
-    loadTexture("data/textures/dirt.jpg", &textures[4], 3);
+    loadTexture("data/textures/grass.jpg", &textures[1], 7);
+    loadTexture("data/textures/rock.jpg", &textures[2], 7);
+    loadTexture("data/textures/lava.jpg", &textures[3], 7);
+    loadTexture("data/textures/dirt.jpg", &textures[4], 7);
     loadTexture("data/textures/shadowmap.png", &textures[5], 3);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
@@ -41,8 +41,8 @@ void loadTextures()
     }
     glActiveTexture(GL_TEXTURE0);
     loadTexture("data/textures/particle.png", &textures[6], 0);
-    loadTexture("data/textures/stonewall.jpg", &textures[7], 3);
-    loadTexture("data/textures/concrete.jpg", &textures[8], 3);
+    loadTexture("data/textures/stonewall.jpg", &textures[7], 7);
+    loadTexture("data/textures/concrete.jpg", &textures[8], 7);
 }
 
 void loadShaders()
@@ -67,7 +67,9 @@ void loadShaders()
 
 void loadModels()
 {
+    enemyModel.load("data/models/enemy/enemy.obj");
     bombModel.load("data/models/Bomb/Bomb.obj");
     heroModel.load("data/models/Lilith/Lilith.obj");
     crateModel.load("data/models/Crate/Crate.obj");
+
 }

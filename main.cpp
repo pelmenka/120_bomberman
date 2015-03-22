@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "render/render.h"
 #include "level.h"
 #include "hero.h"
@@ -29,6 +30,7 @@ void putTex(int, int, bool);
 
 int main()
 {
+
     _log::init();
     glfwSetErrorCallback(glfwError);
     glfwInit();
@@ -44,7 +46,7 @@ int main()
 
     glfwMakeContextCurrent(window);
     glewInit();
-
+    srand(time(0));
     writeInfo();
 
     glLoadIdentity();
@@ -72,13 +74,22 @@ int main()
     vec2f epos;
     float time = 0;
     char temp[32];
+
+    field.generate();
+
     while(!glfwWindowShouldClose(window))
     {
 
         updateCamera(&cam);
         actor.update(cam.x);
-
+        field.updateArmy();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+        if(glfwGetKey(window, GLFW_KEY_Q))
+            glPolygonMode(GL_FRONT, GL_LINE);
+        else
+            glPolygonMode(GL_FRONT, GL_FILL);
+
         off = actor.getPos();
         glPushMatrix();
         glTranslatef(0, 0, cam.z-5);
@@ -86,27 +97,9 @@ int main()
         glRotatef(cam.x, 0, 0, 1);
         glTranslatef(-off.x-0.5, -off.y-0.5, 0);
 
-        /*if(glfwGetKey(window, GLFW_KEY_SPACE))
-            test.spawn();
-        else
-            test.update();*/
-        //{
-            //epos = actor.getPos();
-            //field.explosion(epos.x+0.5, epos.y+0.5, 3);
-            //test.spawn();
-        //}
-
         field.draw();
-
-        //actor.draw();
         actor.draw();
-        //glDepthMask(0);
-        //glEnable(GL_BLEND);
-
-
-
-        //glDisable(GL_BLEND);
-        //glDepthMask(1);
+        field.drawArmy();
         render::game::drawParticles();
         glPopMatrix();
         glfwSwapBuffers(window);

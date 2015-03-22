@@ -629,11 +629,12 @@
 1426863543 c:\prog\120\src\render\render.h
 	"../common.h"
 
-1426886189 source:d:\программирование\120_1\src\level.cpp
+1427018387 source:d:\программирование\120_1\src\level.cpp
 	<GL/glew.h>
 	"level.h"
 	<memory.h>
 	<stdlib.h>
+	<algorithm>
 	"render/render.h"
 
 1344236348 d:\программирование\120_1\include\gl\glew.h
@@ -644,9 +645,10 @@
 	<OpenGL/glu.h>
 	<GL/glu.h>
 
-1426886075 d:\программирование\120_1\src\level.h
+1426972261 d:\программирование\120_1\src\level.h
 	"common.h"
 	"hero.h"
+	"enemy.h"
 
 1426658146 d:\программирование\120_1\src\common.h
 	"log.h"
@@ -665,11 +667,12 @@
 	<fstream>
 	"log.h"
 
-1426883374 source:d:\программирование\120_1\src\main.cpp
+1426975031 source:d:\программирование\120_1\src\main.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"render/render.h"
 	"level.h"
 	"hero.h"
@@ -855,12 +858,13 @@
 1382546502 d:\программирование\120_1\include\box2d\dynamics\joints\b2wheeljoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1425805124 d:\программирование\120_1\src\texops.h
+1426958572 d:\программирование\120_1\src\texops.h
 	"common.h"
+	<string>
 
 1426614148 source:d:\программирование\120_1\src\resource.rc
 
-1425805286 source:d:\программирование\120_1\src\texops.cpp
+1426968165 source:d:\программирование\120_1\src\texops.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<FreeImage.h>
@@ -875,8 +879,9 @@
 1426864999 d:\программирование\120_1\src\render\particles.h
 	"../common.h"
 
-1426886487 source:d:\программирование\120_1\src\hero.cpp
+1427016075 source:d:\программирование\120_1\src\hero.cpp
 	<GLFW/glfw3.h>
+	<stdlib.h>
 	<math.h>
 	"hero.h"
 	"level.h"
@@ -893,7 +898,7 @@
 1426880388 d:\программирование\120_1\src\render\buffer.h
 	"../common.h"
 
-1426883264 source:d:\программирование\120_1\src\render\game.cpp
+1427018890 source:d:\программирование\120_1\src\render\game.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<memory.h>
@@ -901,19 +906,22 @@
 	"render.h"
 	"buffer.h"
 	"model.h"
-	"../level.h"
+	"../enemy.h"
 
-1426885269 source:d:\программирование\120_1\src\render\model.cpp
+1426960079 source:d:\программирование\120_1\src\render\model.cpp
 	<stdio.h>
 	<stdlib.h>
 	<GL/glew.h>
 	<string.h>
 	"model.h"
 	"../texops.h"
+	<fstream>
 
-1426866618 d:\программирование\120_1\src\render\model.h
+1426959667 d:\программирование\120_1\src\render\model.h
 	<string>
+	<vector>
 	"../common.h"
+	"buffer.h"
 
 1426883163 source:d:\программирование\120_1\src\render\particles.cpp
 	"particles.h"
@@ -933,7 +941,7 @@
 
 1425806302 d:\программирование\120_1\src\render\shader.h
 
-1426874952 d:\программирование\120_1\src\render\internal.h
+1426920541 d:\программирование\120_1\src\render\internal.h
 	"shader.h"
 	"model.h"
 
@@ -946,7 +954,7 @@
 	"particles.h"
 	"internal.h"
 
-1426881308 source:d:\программирование\120_1\src\render\resources.cpp
+1426968192 source:d:\программирование\120_1\src\render\resources.cpp
 	<GL/glew.h>
 	"internal.h"
 	"shader.h"
@@ -960,4 +968,16 @@
 	<memory.h>
 	"shader.h"
 	"../log.h"
+
+1427018747 source:d:\программирование\120_1\src\enemy.cpp
+	<GLFW/glfw3.h>
+	"enemy.h"
+	"main.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1427018747 d:\программирование\120_1\src\enemy.h
+	"common.h"
+	"level.h"
 

@@ -89,7 +89,6 @@ bool model::load(string path)
     obj.close();
 
     int index, tindex;
-    int count = 0;
     data.resize(indecies.size());
     for(int i = 0; i < indecies.size(); i++)
     {
@@ -97,7 +96,6 @@ bool model::load(string path)
         tindex = indecies[i].y-1;
         data[i].tex = texCoord[tindex];
         data[i].vert = vert[index];
-        //count++;
     }
 
     VAO.gen();
@@ -113,7 +111,6 @@ bool model::load(string path)
 
     glBufferData(GL_ARRAY_BUFFER, data.size()*sizeof(vertex), data.data(), GL_STATIC_DRAW);
     VBO.unbind();
-
 
     return 1;
 }

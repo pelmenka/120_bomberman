@@ -1,4 +1,5 @@
 #include <GLFW/glfw3.h>
+#include <stdlib.h>
 #include <math.h>
 #include "hero.h"
 #include "level.h"
@@ -16,7 +17,7 @@ void hero::reset()
 {
     angle = 0;
     tangle = 0;
-    pos = {0, 0};
+    pos = {0, 10};
 }
 
 void hero::move(int d)
@@ -171,8 +172,12 @@ void bomb::explode()
 
     for(int i = 0; i < 4; i++)
     {
-        fire[i].pos = {pos.x, pos.y, 0.25};
-        fire[i].spawn();
+        if(abs(fire[i].speed.x+fire[i].speed.y) > 0)
+        {
+            fire[i].pos = {pos.x, pos.y, 0.25};
+            fire[i].spawn();
+        }
+
     }
 
 }

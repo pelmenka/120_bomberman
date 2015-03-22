@@ -9,6 +9,11 @@ GLFWimage loadImage(const char*);
 
 std::list<uint*> textures;
 
+vec2<long> loadTexture(std::string path, GLuint *texture, int flag)
+{
+    loadTexture(path.c_str(), texture, flag);
+}
+
 vec2<long> loadTexture(const char *path, GLuint *texture, int flag)
 {
     GLFWimage img;
@@ -33,13 +38,16 @@ vec2<long> loadTexture(const char *path, GLuint *texture, int flag)
         glGenTextures(1, texture);
 
     glBindTexture(GL_TEXTURE_2D, *texture);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size.x, size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)img.pixels);
+    if(flag&0x4) gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGBA, size.x, size.y, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)img.pixels);
+    else glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, size.x, size.y, 0, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid*)img.pixels);
 
     if(flag&0x1) glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     else glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
     if(flag&0x2) glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     else glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+
+
 
     delete [] img.pixels;
 

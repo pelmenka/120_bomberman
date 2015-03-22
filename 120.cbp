@@ -46,6 +46,8 @@
 			<Add directory="../lib" />
 		</Linker>
 		<Unit filename="common.h" />
+		<Unit filename="enemy.cpp" />
+		<Unit filename="enemy.h" />
 		<Unit filename="hero.cpp" />
 		<Unit filename="hero.h" />
 		<Unit filename="level.cpp" />
