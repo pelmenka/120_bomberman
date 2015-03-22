@@ -57,11 +57,12 @@ void level::generate()
         }
     int enemies = rand()%6+4, index;
     enemy tempEnemy;
+    army.clear();
     std::random_shuffle(pos.begin(), pos.end());
     std::random_shuffle(fpos.begin(), fpos.end());
     for(int i = 0; i < enemies; i++)
     {
-        tempEnemy.spawn(pos[i].x, pos[i].y, this, count);
+        tempEnemy.spawn(pos[i].x, pos[i].y, this, count+1);
         army.push_back(tempEnemy);
     }
     exit = fpos[0];
