@@ -43,6 +43,7 @@
 			<Add library="opengl32" />
 			<Add library="gdi32" />
 			<Add library="freeimage" />
+			<Add library="irrKlang" />
 			<Add directory="../lib" />
 		</Linker>
 		<Unit filename="common.h" />
@@ -56,6 +57,9 @@
 		<Unit filename="log.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="main.h" />
+		<Unit filename="music.cpp" />
+		<Unit filename="music.h" />
+		<Unit filename="music/findMusicWIN32.cpp" />
 		<Unit filename="render/buffer.cpp" />
 		<Unit filename="render/buffer.h" />
 		<Unit filename="render/game.cpp" />
@@ -73,6 +77,8 @@
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="sound.cpp" />
+		<Unit filename="sound.h" />
 		<Unit filename="texops.cpp" />
 		<Unit filename="texops.h" />
 		<Extensions>

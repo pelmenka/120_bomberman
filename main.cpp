@@ -6,6 +6,7 @@
 #include "render/render.h"
 #include "level.h"
 #include "hero.h"
+#include "music.h"
 
 GLFWwindow *window;
 
@@ -16,8 +17,12 @@ double scroll;
 void drawShadow(int x, int y);
 void updateCamera(vec3f*);
 
+musicEngine musicBox;
+soundEngine soundBox;
+
 hero actor;
 level field;
+void reset();
 
 void checkScroll(GLFWwindow*, double, double s)
 {
@@ -30,7 +35,6 @@ void putTex(int, int, bool);
 
 int main()
 {
-
     _log::init();
     glfwSetErrorCallback(glfwError);
     glfwInit();
@@ -61,34 +65,30 @@ int main()
     render::init();
 
     vec2<float> off = {0, 0};
-    vec3f cam = {0, 0, 0};
-    glClearColor(0.5, 0.7, 0.9, 1);
-
+    vec3f cam = {0, -20, 0};
+    glClearColor(.663, 0.78, 0.827, 1);
 
     actor.init();
 
-    //emitter test(1000);
-    //test.nospawn = 1;
     field.init();
     int i = 0;
     vec2f epos;
     float time = 0;
     char temp[32];
 
-    field.generate();
+    field.reset();
 
     while(!glfwWindowShouldClose(window))
     {
-
+        musicBox.update();
         updateCamera(&cam);
         actor.update(cam.x);
-        field.updateArmy();
+        field.update();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        if(glfwGetKey(window, GLFW_KEY_Q))
-            glPolygonMode(GL_FRONT, GL_LINE);
-        else
-            glPolygonMode(GL_FRONT, GL_FILL);
+        if(glfwGetKey(window, GLFW_KEY_R))
+            if(!actor.isAlive())
+                reset();
 
         off = actor.getPos();
         glPushMatrix();
@@ -196,4 +196,10 @@ void writeInfo()
     _log::out(glGetString(GL_VERSION));
     _log::out("Renderer: ", 0);
     _log::out(glGetString(GL_RENDERER));
+}
+
+void reset()
+{
+    field.generate();
+    actor.reset();
 }

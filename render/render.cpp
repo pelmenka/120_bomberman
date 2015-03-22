@@ -14,10 +14,10 @@ void render::init()
 
 void emitter::draw()
 {
-    for(int i = 0; i < count; i++)
+    for(auto i: data)
     {
-        if(data[i].color.w < 0.01) continue;
-        render::primitives::point(data[i].pos, data[i].color);
+        if(i.color.w < 0.01) continue;
+        render::primitives::point(i.pos, i.color);
     }
 }
 
@@ -33,3 +33,4 @@ void render::game::drawParticles()
     glDisable(GL_BLEND);
     glDepthMask(1);
 }
+

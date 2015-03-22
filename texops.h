@@ -6,6 +6,7 @@
 
 vec2<long> loadTexture(const char*, GLuint*, int = 3);
 vec2<long> loadTexture(std::string, GLuint*, int = 3);
+void createEmpty(uint*, int, int, int = 3);
 void cleanTextures();
 
 #endif // TEXOPS_H_INCLUDED

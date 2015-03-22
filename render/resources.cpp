@@ -23,16 +23,19 @@ void internal::loadResources()
 
 void loadTextures()
 {
-    loadTexture("data/textures/mask.png", &textures[0], 3);
+    createEmpty(&textures[0], 45, 33);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+    createEmpty(&textures[5], 45, 33);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+
     loadTexture("data/textures/grass.jpg", &textures[1], 7);
     loadTexture("data/textures/rock.jpg", &textures[2], 7);
     loadTexture("data/textures/lava.jpg", &textures[3], 7);
     loadTexture("data/textures/dirt.jpg", &textures[4], 7);
     loadTexture("data/textures/shadowmap.png", &textures[5], 3);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+
     for(int i = 0; i < 6; i++)
     {
         glActiveTexture(GL_TEXTURE0+i);
@@ -71,5 +74,4 @@ void loadModels()
     bombModel.load("data/models/Bomb/Bomb.obj");
     heroModel.load("data/models/Lilith/Lilith.obj");
     crateModel.load("data/models/Crate/Crate.obj");
-
 }

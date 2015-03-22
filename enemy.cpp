@@ -16,7 +16,7 @@ bool closeTo(float a, float b, float e = 0.01)
     return (fabs(a-b) < e);
 }
 
-void enemy::spawn(int x, int y, level *p)
+void enemy::spawn(int x, int y, level *p, int c)
 {
     pos = {x, y};
     dest = {x, y};
@@ -25,6 +25,11 @@ void enemy::spawn(int x, int y, level *p)
     timer = glfwGetTime();
     angle = 0;
     tangle = 0;
+
+    speed = 0.5+float(c)/10.0;
+    if(speed > 1.5) speed = 1.5;
+    health = c/3;
+    hitTime = glfwGetTime();
 }
 
 void enemy::update()
@@ -65,12 +70,20 @@ void enemy::update()
 
 void enemy::kill()
 {
-    alive = 0;
+    if(hitTime+0.5 > glfwGetTime()) return;
+    hitTime = glfwGetTime();
+    if(!health) alive = 0;
+    else health--;
 }
 
 vec2i enemy::getPos()
 {
     return {round(pos.x), round(pos.y)};
+}
+
+vec2f enemy::getPosf()
+{
+    return pos;
 }
 
 void enemy::findWay()
@@ -80,7 +93,7 @@ void enemy::findWay()
     for(int i = 0; i < 4; i++)
     {
         if(parent->getBlock(round(pos.x)+way[i][0], round(pos.y)+way[i][1]) == 0)
-            available.push_back(i)
+            available.push_back(i);
     }
 
 
@@ -89,4 +102,9 @@ void enemy::findWay()
     dest.x = pos.x+way[tangle][0];
     dest.y = pos.y+way[tangle][1];
 
+}
+
+bool enemy::isAlive()
+{
+    return alive;
 }

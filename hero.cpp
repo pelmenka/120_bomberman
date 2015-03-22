@@ -10,38 +10,69 @@
 void hero::init()
 {
     reset();
-    mines.resize(3);
 }
 
 void hero::reset()
 {
-    angle = 0;
-    tangle = 0;
-    pos = {0, 10};
+    mines.reserve(60);
+    mines.resize(1);
+    power = 2;
+    alive = 1;
+    health = 3;
+    spawn();
 }
 
-void hero::move(int d)
+void hero::spawn()
+{
+    angle = 180;
+    tangle = 2;
+    pos = {0, 10};
+    hitTime = glfwGetTime();
+}
+
+void hero::addHealth()
+{
+    health++;
+}
+
+void hero::addMine()
+{
+    bomb temp;
+    mines.push_back(temp);
+    for(int i = 0; i < 4; i++)
+        mines.back().fire[i].resize(2048);
+}
+
+void hero::addPower()
+{
+    power++;
+}
+
+void hero::move(int d, float delta)
 {
     tangle = d%4;
     switch(-tangle)
     {
     case 0:
-        pos.y += 0.1; break;
+        pos.y += 3*delta; break;
     case 1:
-        pos.x += 0.1; break;
+        pos.x += 3*delta; break;
     case 2:
-        pos.y -= 0.1; break;
+        pos.y -= 3*delta; break;
     case 3:
-        pos.x -= 0.1; break;
+        pos.x -= 3*delta; break;
     }
 }
 
 void hero::update(int a)
 {
     static float time = 0;
-    if(time+0.02 > glfwGetTime()) return;
+    float delta = glfwGetTime() - time;
     time = glfwGetTime();
 
+    for(int i = 0; i < mines.size(); i++)
+        mines[i].update();
+    if(!alive) return;
     a += 45;
     a /= -90;
 
@@ -49,21 +80,20 @@ void hero::update(int a)
     int x = round(pos.x), y = round(pos.y);
 
     if(getKey(GLFW_KEY_W) || getKey(GLFW_KEY_UP))
-        move(a);
+        move(a, delta);
     if(getKey(GLFW_KEY_S) || getKey(GLFW_KEY_DOWN))
-        move(a-2);
+        move(a-2, delta);
     if(getKey(GLFW_KEY_A) || getKey(GLFW_KEY_LEFT))
-        move(a-3);
+        move(a-3, delta);
     if(getKey(GLFW_KEY_D) || getKey(GLFW_KEY_RIGHT))
-        move(a-1);
+        move(a-1, delta);
 
     if(getKey(GLFW_KEY_SPACE))
         if(!field.getBlock(x, y))
             for(int i = 0; i < mines.size(); i++)
-                if(mines[i].spawn(x, y)) break;
+                if(mines[i].spawn(x, y, power)) break;
 
-    for(int i = 0; i < mines.size(); i++)
-        mines[i].update();
+
 
 
 
@@ -116,24 +146,35 @@ void hero::update(int a)
     else if(angle > tangle*90) angle-=30;
 }
 
-bool bomb::spawn(int x, int y)
+void hero::kill()
 {
-    puts("BOMB_S");
+    if(hitTime+1 > glfwGetTime()) return;
+    hitTime = glfwGetTime();
+    if(!health) alive = 0;
+    else health--;
+}
+
+bool hero::isAlive()
+{
+    return alive;
+}
+
+bool bomb::spawn(int x, int y, int p)
+{
     if(timer > 0) return 0;
     if(field.getBlock(x, y) != 0) return 0;
     if(glfwGetTime() < expTime+0.2) return 0;
     timer = glfwGetTime()+2;
     pos = {x, y};
-    power = 3;
+    power = p;
     field.putBomb(x, y, this);
     return 1;
 }
 
 bomb::bomb()
 {
-    puts("BOMB_D");
+    pos = {0, 0};
     timer = -1;
-    fire = new emitter[4];
     for(int i = 0; i < 4; i++)
     {
         fire[i].nospawn = 1;
@@ -142,29 +183,21 @@ bomb::bomb()
     expTime = 0;
 }
 
-bomb::~bomb()
-{
-    delete [] fire;
-}
-
 void bomb::update()
 {
     for(int i = 0; i < 4; i++) fire[i].update();
     if(timer < 0) return;
     if(glfwGetTime() < timer) return;
-    puts("BOMB_U");
     explode();
 }
 
 void bomb::explode()
 {
     if(timer < 0) return;
-    printf("BOMB_E %d %d\n", (int)pos.x, (int)pos.y);
 
     timer = -1;
     expTime = glfwGetTime();
     vec4i sides = field.explosion(pos.x, pos.y, power);
-    printf("%d", sides.x);
     fire[0].speed.x = sides.y;
     fire[1].speed.y = sides.x;
     fire[2].speed.x = -sides.w;
@@ -177,9 +210,8 @@ void bomb::explode()
             fire[i].pos = {pos.x, pos.y, 0.25};
             fire[i].spawn();
         }
-
     }
-
+    soundBox.playSound("data/sounds/explosion.wav");
 }
 
 

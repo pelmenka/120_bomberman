@@ -58,6 +58,21 @@ vec2<long> loadTexture(const char *path, GLuint *texture, int flag)
     return size;
 }
 
+void createEmpty(uint *texture, int x, int y, int flag)
+{
+    if(!glIsTexture(*texture))
+        glGenTextures(1, texture);
+
+    glBindTexture(GL_TEXTURE_2D, *texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, 0);
+
+    if(flag&0x1) glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    else glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+    if(flag&0x2) glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    else glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+}
+
 GLFWimage loadImage(const char *path)
 {
     GLFWimage temp = {-1, -1, 0};

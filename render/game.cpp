@@ -6,6 +6,7 @@
 #include "buffer.h"
 #include "model.h"
 #include "../enemy.h"
+#include "../main.h"
 
 char expMap[45][33];
 
@@ -78,7 +79,6 @@ void level::init()
         }
     glBufferSubData(GL_ARRAY_BUFFER, 0, count*sizeof(vertex), data);
     delete [] data;
-    resetTerrain(this);
 }
 
 void level::draw()
@@ -107,19 +107,6 @@ void level::draw()
                 glTranslatef(i, j, 0);
                 internal::crateModel.draw();
                 glPopMatrix();
-            }
-}
-
-void resetTerrain(level *field)
-{
-    memset(expMap, 0, 45*33);
-    for(int i = 0; i < 15; i++)
-        for(int j = 0; j < 11; j++)
-            switch(field->getBlock(i, j))
-            {
-            case 0: render::game::putBlock(i, j, 0); break;
-            case 1: render::game::putBlock(i, j, 2); break;
-            case 2: render::game::putBlock(i, j, 1); break;
             }
 }
 
@@ -180,7 +167,19 @@ void hero::draw()
     glTranslatef(pos.x+0.5, pos.y+0.5, 0);
 
     glRotatef(angle, 0, 0, 1);
-    internal::heroModel.draw();
+    if(!alive)
+    {
+        glTranslatef(0, 0.5, 0.1);
+        glRotatef(90, 1, 0, 0);
+    }
+    if(hitTime+1 > glfwGetTime() && alive)
+    {
+        if(int(glfwGetTime()*10)%2)
+            internal::heroModel.draw();
+    }
+    else
+        internal::heroModel.draw();
+
     glPopMatrix();
     for(int i = 0; i < mines.size(); i++)
         mines[i].draw();
@@ -188,13 +187,24 @@ void hero::draw()
 
 void enemy::draw()
 {
-    if(!alive) return;
     internal::defaultShader.bind();
     glPushMatrix();
     glTranslatef(pos.x+0.5, pos.y+0.5, 0);
-
     glRotatef(angle, 0, 0, -1);
-    internal::enemyModel.draw();
+
+    if(!alive)
+    {
+        glTranslatef(0, 0.5, 0.1);
+        glRotatef(90, 1, 0, 0);
+    }
+    if(hitTime+0.5 > glfwGetTime() && alive)
+    {
+        if(int(glfwGetTime()*10)%2)
+            internal::enemyModel.draw();
+    }
+    else
+        internal::enemyModel.draw();
+
     glPopMatrix();
 }
 
@@ -217,7 +227,7 @@ void bomb::draw()
 
 void render::game::putPix(int x, int y, int col)
 {
-    const uint colors[4] = {0xFF000000, //BLACK
+    const uint colors[4] = {0x00000000, //BLACK
                             0xFFFF0000, //BLUE
                             0xFF0000FF, //RED
                             0xFF00FFFF};//YELLOW
@@ -234,4 +244,24 @@ void render::game::putBlock(int x, int y, int col)
     for(int i = 0; i < 3; i++)
         for(int j = 0; j < 3; j++)
             putPix(x*3+i, y*3+j, col);
+}
+
+void render::game::resetTerrain()
+{
+
+    uchar black[45*33*4];
+    memset(black, 0, 45*33*4);
+    glBindTexture(GL_TEXTURE_2D, internal::textures[0]); // ground
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 45, 33, 0, GL_RGBA, GL_UNSIGNED_BYTE, black);
+    glBindTexture(GL_TEXTURE_2D, internal::textures[5]); // shadow
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 45, 33, 0, GL_RGBA, GL_UNSIGNED_BYTE, black);
+     memset(expMap, 0, 45*33);
+    for(int i = 0; i < 15; i++)
+        for(int j = 0; j < 11; j++)
+            switch(field.getBlock(i, j))
+            {
+            case 0: putBlock(i, j, 0); break;
+            case 1: putBlock(i, j, 2); break;
+            case 2: putBlock(i, j, 1); break;
+            }
 }

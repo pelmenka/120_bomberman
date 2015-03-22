@@ -2,6 +2,7 @@
 #define PRACTICLES_H_INCLUDED
 
 #include "../common.h"
+#include <vector>
 
 struct partvert
 {
@@ -19,30 +20,30 @@ class particle
     float timer, lifeTime, oldTime;
     vec4f startColor, endColor, color;
     vec3f position, speed, pos;
-    particle();
+
     void spawn();
     bool update();
+public:
+    particle();
 };
 
 class emitter
 {
     friend class particle;
 protected:
-    particle *data;
-    partvert *rdata;
+    std::vector<particle> data;
     vec3f getPosition();
-    int count;
 public:
     bool nospawn = 0;
     float lifeTime;
     vec4f startColor, endColor;
     vec3f pos, speed, size;
     emitter(int = 2048);
-    ~emitter();
 
     void init();
     void update();
     void draw();
+    void resize(int);
 
     void spawn();
 };

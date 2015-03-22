@@ -41,6 +41,7 @@ namespace render
         void putPix(int, int, int);
         void putBlock(int, int, int);
         void drawParticles();
+        void resetTerrain();
     }
 
     void init();

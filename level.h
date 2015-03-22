@@ -27,17 +27,21 @@ class level
     void mathShadows();
 
     std::vector<enemy> army;
-
+    void checkArmy(int, int);
+    vec2i exit, bonus;
+    emitter effect[2];
+    bool canExit, bonusTaken;
+    int count;
 public:
     level();
-    //~level();
 
     char getBlock(int, int);
     void putBomb(int, int, bomb*);
     vec4i explosion(int, int, int);
 
     void generate();
-    void updateArmy();
+    void reset();
+    void update();
     void placeBox();
     void init();
     void draw();

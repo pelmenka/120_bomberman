@@ -12,10 +12,7 @@ default_random_engine randEngine;
 
 emitter::emitter(int s)
 {
-    data = new particle[s];
-    rdata = new partvert[s];
-    for(int i = 0; i < s; i++)
-        data[i].parent = this;
+    resize(s);
 
     startColor = {1, 0.5, 0.2, 1};
     endColor = {1, 0, 0, 0};
@@ -24,14 +21,18 @@ emitter::emitter(int s)
 
     lifeTime = 0.5;
     size = {1, 1, 0.5};
-
-    count = s;
+    nospawn = 0;
 }
 
-emitter::~emitter()
+void emitter::resize(int s)
 {
-    delete [] data;
-    delete [] rdata;
+    data.resize(s);
+    for(int i = 0; i < s; i++)
+    {
+        data[i].parent = this;
+        data[i].spawn();
+    }
+
 }
 
 vec3f emitter::getPosition()
@@ -45,14 +46,15 @@ vec3f emitter::getPosition()
 
 void emitter::update()
 {
-    for(int i = 0; i < count; i++)
-        if(data[i].update() && !nospawn) data[i].spawn();
+    for(int i = 0; i < data.size(); i++)
+        if(data[i].update() && !nospawn)
+            data[i].spawn();
 }
 
 void emitter::spawn()
 {
     //if(!nospawn) return;
-    for(int i = 0; i < count; i++)
+    for(int i = 0; i < data.size(); i++)
         data[i].spawn();
 }
 
